@@ -148,7 +148,7 @@ void dhrystone_test ()
   Begin_Time = time ( (long *) 0);
 #endif
 #ifdef MSC_CLOCK
-  Begin_Time = clock();
+  Begin_Time = rt_tick_get();
 #endif
 
   for (Run_Index = 1; Run_Index <= Number_Of_Runs; ++Run_Index)
@@ -209,7 +209,7 @@ void dhrystone_test ()
   End_Time = time ( (long *) 0);
 #endif
 #ifdef MSC_CLOCK
-  End_Time = clock();
+  End_Time = rt_tick_get();
 #endif
 
   rt_kprintf ("Execution ends\n");
